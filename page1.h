@@ -170,7 +170,6 @@ const char PAGE1[] PROGMEM = R"=====(
     <script>
         function showForm(formType) {
             // Hide all forms
-            document.getElementById('wpa').style.display = 'none';
             document.getElementById('wpa2').style.display = 'none';
             document.getElementById('eap').style.display = 'none';
 
@@ -200,30 +199,11 @@ const char PAGE1[] PROGMEM = R"=====(
     </div>
     <div class="selection">
         <p>Select WiFi Connection</p>
-        <button id="wpabutton" onclick="showForm('wpa')">WPA</button>
         <button id="wpa2button" onclick="showForm('wpa2')">WPA2</button>
         <button id="eapbutton" onclick="showForm('eap')">EAP</button>
     </div>
 
     <div>
-        <form id="wpa" action="/page2" method="post">
-            <h2>WPA ESP32 Wi-Fi Connection</h2>
-            <i class="fa fa-wifi"></i>
-            <input class="input" type="text" id="ssidwpa" name="ssid" placeholder="WiFi Name" required><br>
-            <i class="fa fa-lock"></i>
-            <input class="input" type="text" id="passwordwpa" name="password" placeholder="Password" required><br>
-            <div>
-                <label>Auto-Recognition</label>
-                <label class="switch">
-                    <input id ="reconfigwpa" type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-            </div>
-            <a href="/page2">
-                <input class="submitbutton" type="submit" onclick="saveDetails('WPA', document.getElementById('ssidwpa').value, 'Not Applicable for WPA', document.getElementById('passwordwpa').value, document.getElementById('reconfigwpa').checked)" value="Connect to WiFi">
-            </a>
-        </form>
-
         <form id="wpa2" action="/page2" method="post">
             <h2>WPA2 ESP32 Wi-Fi Connection</h2>
             <i class="fa fa-wifi"></i>
