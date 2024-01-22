@@ -1,6 +1,4 @@
 #include <WiFi.h>
-#include <Arduino.h>
-#include <AsyncTCP.h>
 #include "ESPAsyncWebServer.h"
 #include <DNSServer.h>
 
